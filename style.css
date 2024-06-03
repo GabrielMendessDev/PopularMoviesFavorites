@@ -1,90 +1,79 @@
-body{
-    border: 0;
+/* Estilizações globais */
+body {
+    margin: 0;
     padding: 0;
     background-color: #040828;
     color: white;
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Estilização da barra de rolagem */
 body::-webkit-scrollbar {
-    width: 10px; /* Largura da barra de rolagem */
-  }
-  
-  /* Estilizando o botão de rolagem */
-  body::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, rgb(18, 18, 233), rgb(16, 16, 153), rgb(10, 10, 129)); /* Cor do botão de rolagem */
-  }
+    width: 10px;
+}
 
-header{
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, rgb(18, 18, 233), rgb(16, 16, 153), rgb(10, 10, 129));
+}
+
+/* Estilização do cabeçalho */
+header {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-}
-
-.checkbox{
-    display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-#divBusca{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    text-align: center;
     padding: 20px;
-  }
-  
-  #txtBusca{
-    outline: rgb(132, 7, 7);
-    padding: 10px;/* espaçamento interno */
-    border-radius: 12px;/* arredonda as bordas */
-    font-size: 20px;
+}
+
+/* Estilização da checkbox de favoritos */
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Estilização da barra de busca */
+#divBusca {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#txtBusca {
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 18px;
     background-color: #7c7c7c2b;
     color: #ffffff;
-    width: 500px;
-    float:left;
-    font-size:18px;
-    border:none;
-    height:32px;
-  }
+    border: none;
+    width: 100%;
+    max-width: 500px;
+}
 
-
+#txtBusca:focus{
+    outline: rgb(8, 19, 108);
+}
 
 #search {
     border: none;
     outline: none;
     padding: 10px;
-    position: absolute;
+    margin-left: 10px;
     border-radius: 50px;
     background-color: #7c7c7c2b;
-    float: right;
     cursor: pointer;
-    margin-left: 34%;
 }
 
 #search:hover {
     background-color: #7c7c7c6b;
 }
 
-.lupa{
+.lupa {
     height: 20px;
 }
 
-/* #movie{
-    display: flex;
-    flex-direction: row;
-    height: auto;
-    padding: 30px;
-    max-width: 70%;
-    background-color: #070c30;
-    box-shadow: -8px 4px 47px -4px rgb(142, 12, 12);
-    border-radius: 8px;
-    margin: 0 auto;
-    margin-top: 20px;
-} */
-
+/* Estilização dos filmes */
 #movie {
     display: flex;
     background-color: #070c30;
@@ -93,9 +82,7 @@ header{
     opacity: 0.8;
     max-width: 800px;
     box-shadow: -8px 4px 47px -4px rgb(8, 19, 108);
-    border-radius: 8px;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 20px auto;
 }
 
 #img-movie {
@@ -125,7 +112,7 @@ header{
     margin-top: 5px;
 }
 
-#star{
+#star {
     width: 20px;
     height: auto;
 }
@@ -148,20 +135,45 @@ header{
     text-align: justify;
 }
 
+/* Estilização do rodapé */
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 70px;
     color: white;
-  }
-  
-  footer a {
+}
+
+footer a {
     color: white;
     text-decoration: none;
-  }
-  
-  footer a:hover {
+}
+
+footer a:hover {
     cursor: pointer;
     text-decoration: underline;
-  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #movie {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #img-movie {
+        margin-bottom: 20px;
+    }
+
+    #description {
+        display: none;
+    }
+
+    #txtBusca {
+        width: 80%;
+    }
+
+    #search {
+        margin-left: 5px;
+    }
+}
